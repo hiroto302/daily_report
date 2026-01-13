@@ -13,6 +13,7 @@
 ## システムアーキテクチャ
 
 # 使用技術
+
 **言語:** TypeScript
 **フレームワーク** Next.js(App Router)
 **UIコンポーネント** shadcn/ui + Tailwind CSS
@@ -32,6 +33,7 @@
 5. **MANAGER_COMMENT** - 上長コメント
 
 主なリレーション:
+
 - SALES_PERSON → DAILY_REPORT（1:多）
 - DAILY_REPORT → VISIT_RECORD（1:多）
 - CUSTOMER → VISIT_RECORD（1:多）
@@ -42,11 +44,13 @@
 ベースURL: `http://localhost:3000/api`
 
 **認証**（セッションベース）:
+
 - `POST /auth/login` - ログイン
 - `POST /auth/logout` - ログアウト
 - `GET /auth/me` - 現在のユーザー情報取得
 
 **日報**:
+
 - `GET /reports` - 日報一覧取得（クエリパラメーター: `start_date`, `end_date`, `sales_person_id`）
 - `POST /reports` - 日報新規作成
 - `GET /reports/:report_id` - 日報詳細取得
@@ -73,7 +77,9 @@
 - **セッション管理**: セキュアCookieとタイムアウト設定（NextAuth.js推奨）
 
 ### テスト
+
 テスト仕様: [test_spec.md](test_spec.md)
+
 - 22個のテストケース（TC-01 〜 TC-22）
 - 機能、セキュリティ、ユーザビリティテストをカバー
 - テスト環境: Chrome、Safari（最新版）
